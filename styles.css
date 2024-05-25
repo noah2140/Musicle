@@ -19,12 +19,14 @@ body, html {
 
 #hintContainer {
     height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#play-button {
-    width: 50px;
-    height: 50px;
-    background-color: #f00;
+.play-button {
+    background-color: dimgray;
     border: none;
     border-radius: 50%;
     position: relative;
@@ -32,7 +34,7 @@ body, html {
     outline: none;
 }
 
-#play-button::before {
+.play-button::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -40,9 +42,6 @@ body, html {
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
-    border-left: 15px solid white;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
 }
 
 #hintNumberContainer {
@@ -60,36 +59,92 @@ body, html {
     align-items: center;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+}
+
+#skipButton {
+    font-weight: bold;
+    border: thin solid black;
+    background-color: lightgray;
+    margin-left: 3vh;
 }
 
 #guessContainer {
     height: 10%;
     width: 80%;
-    align-items: center;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #guess {
-    width: 50%;
-    height: 150%;
+    width: 75%;
+    height: 100%;
     font-size: 18px;
     font-weight: bold;
+    text-align: center; 
+    padding: 10px; 
+    box-sizing: border-box;
+    margin-right: 50px;
+}
+
+#enterButton {
+    width: 15%;
+    height: 100%;
+    font-weight: bold;
+    border: thin solid black;
+    background-color: lightgray;
 }
 
 @media screen and (max-width: 768px) {
+    .play-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .play-button::before {
+        border-left: 15px solid white;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+
     .number {
         font-size: 16px;
         width: 25px;
         height: 25px; 
     }
+
+    #skipButton {
+        width: 50px;
+        height: 25px; 
+    }
 }
 
 @media screen and (min-width: 769px) {
+    .play-button {
+        width: 100px;
+        height: 100px;
+    }
+
+    .play-button::before {
+        border-left: 30px solid white;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+    }
+
     .number {
         font-size: 18px;
-        font-weight: bold;
         width: 30px;
         height: 30px; 
+    }
+
+    #skipButton {
+        width: 60px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    #enterButton {
+        font-size: 18px;
     }
 }
