@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const startDate = new Date('5/25/2024');
+    const startDate = new Date('5/26/2024');
     let currentDate = new Date();
     let diffTime = Math.abs(currentDate - startDate);
     let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function setDailyPuzzle() {
         let dateStr = "Day" + diffDays + "_";
         for(let i = 1; i <= 6; i++) {
-            let audio = new Audio('/AudioFiles/' + dateStr + i + '.mp3');
+            let audio = new Audio('./AudioFiles/' + dateStr + i + '.mp3');
             puzzle.push(audio);
         }
     }
